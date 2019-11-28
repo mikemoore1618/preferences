@@ -2,13 +2,13 @@ import React from 'react'
 import Item from './Item'
 
 const WishList = (props) => {
-  const {gifts, onRemoveClick } = props
+  const {preferences, onRemoveClick } = props
     return (
       <ul>
-        {gifts.map((g, iForIndex) => {
+        {preferences.map((g, iForIndex) => {
           return (
             <Item onRemoveClick={onRemoveClick} 
-            key={iForIndex} gift={g} 
+            key={iForIndex} preference={g} 
             />
           )
         })}

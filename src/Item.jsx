@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Item= (props) => {
-  const { gift, onRemoveClick } = props
+  const { preference, onRemoveClick } = props
     return (
       <li>
-        {gift.name}
-        <button onClick={() => { onRemoveClick(gift)}}>Remove</button>
+        {preference.name}
+        <button onClick={() => { onRemoveClick(preference)}}>Remove</button>
       </li>
     )
   }

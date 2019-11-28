@@ -6,17 +6,17 @@ import WishList from './WishList'
 class App extends Component {
 
   state = {
-    gifts:[]
+    preferences:[]
   }
-addGift = (gift) => {
-  this.setState({ gifts: [...this.state.gifts, gift ] })
+addPreference = (preference) => {
+  this.setState({ preferences: [...this.state.preferences, preference ] })
 }
 
-removeGift = (gift) => {
-  console.log(gift)
+removePreference = (preference) => {
+  console.log(preference)
   this.setState({
-    gifts: this.state.gifts.filter((g) => {
-      return g.name !== gift.name
+    preferences: this.state.preferences.filter((p) => {
+      return p.name !== preference.name
     })
   })
 }
@@ -25,7 +25,7 @@ removeGift = (gift) => {
 //has first loaded right after the first render
 componentDidMount() {
   this.setState({
-      gifts: [
+      preferences: [
           { name: "Test 1"},
           { name: "Test 2"}
       ]
@@ -33,13 +33,13 @@ componentDidMount() {
 }
 
   render() {
-    const { gifts } = this.state
-    console.log(gifts)
+    const { preferences } = this.state
+    console.log(preferences)
     return (
       <div className="App">
          <h1>Preferences</h1>
-          <Form onFormSubmit={this.addGift}/>
-          <WishList onRemoveClick={this.removeGift} gifts={this.state.gifts} />
+          <Form onFormSubmit={this.addPreference}/>
+          <WishList onRemoveClick={this.removePreference} preferences={this.state.preferences} />
       </div>
     );
   }
