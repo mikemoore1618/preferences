@@ -13,7 +13,7 @@ class Form extends Component {
  render() {
   return (
    <form className="Form" onSubmit={this.handleFormSubmit}>
-    <input type="text" placeholder="Gift Name" ref="name" />
+    <input type="text" placeholder="Preference" ref="name" />
     <button>Add Item</button>
    </form>
   )
